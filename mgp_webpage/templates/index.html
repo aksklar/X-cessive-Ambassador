@@ -7,8 +7,8 @@
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{{ url_for('static', filename='css/materialize.css') }}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{{ url_for('static', filename='css/style.css') }}" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body id="home" class="scrollspy">
 
@@ -68,7 +68,7 @@
 
       </div>
     </div>
-    <div class="parallax"><img src="images/reel.jpg" alt="cinema film reel"></div>
+    <div class="parallax"><img src="{{ url_for('static', filename='images/reel.jpg') }}" alt="cinema film reel"></div>
   </div>
 
   <!--Section 2: Search-->
@@ -97,7 +97,7 @@
   <div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
     </div>
-    <div class="parallax"><img src="images/popcorn.jpg" alt="popcorn"></div>
+    <div class="parallax"><img src="{{ url_for('static', filename='images/popcorn.jpg') }}" alt="popcorn"></div>
   </div>
   <!--About Content-->
   <div class="container">
@@ -123,7 +123,7 @@
   <div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
     </div>
-    <div class="parallax"><img src="images/slate_theater.jpg" alt="movie theater"></div>
+    <div class="parallax"><img src="{{ url_for('static', filename='images/slate_theater.jpg') }}" alt="movie theater"></div>
   </div>
   <!--Contact Section-->
   <footer class="page-footer teal">
@@ -171,8 +171,8 @@
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
+  <script src="{{ url_for('static', filename='js/materialize.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/init.js') }}"></script>
 
   </body>
 </html>
