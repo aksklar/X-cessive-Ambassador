@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>X-cessive Ambassador</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/materialize.css') }}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{{ url_for('static', filename='css/style.css') }}" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body id="home" class="scrollspy">
+
+  <!--Navbar-->
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo">Movie Genre Predictor</a>
+      <a href="#" data-target="mobile-nav" class="sidenav-trigger">
+        <i class="material-icons">menu</i>
+      </a>
+      <ul class="right hide-on-med-and-down">
+        <li>
+          <a href="#home">HOME</a>
+        </li>
+        <li>
+          <a href="#search">SEARCH</a>
+        </li>
+        <li>
+          <a href="#about">ABOUT</a>
+        </li>
+        <li>
+          <a href="#contact">CONTACT</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!--Side Nav Dropdown (For Mobile)-->
+  <ul class="sidenav" id="mobile-nav">
+    <li>
+      <a href="#home">HOME</a>
+    </li>
+    <li>
+      <a href="#search">SEARCH</a>
+    </li>
+    <li>
+      <a href="#about">ABOUT</a>
+    </li>
+    <li>
+      <a href="#contact">CONTACT</a>
+    </li>
+  </ul>
+
+  <!--Section 1: Intro-->
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2">ENJOY WATCHING MOVIES WITHOUT ANY SURPRISES!</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">Start your search now.</h5>
+        </div>
+        <div class="row center">
+          <a href="#search" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
+        </div>
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img src="{{ url_for('static', filename='images/reel.jpg') }}" alt="cinema film reel"></div>
+  </div>
+
+  <!--Section 2: Search-->
+  <div class="container">
+    <div id="search" class="section-search scrollspy">
+      <div class="row">
+        <div class="col s12 center">
+          <h3>
+            <i class="mdi-content-send brown-text"></i>
+          </h3>
+          <h3 class="search-title">S E A R C H</h3>
+          <h5 class="center-align light">Most movies do not fit one type of genre.  The Movie Genre Predictor will let you search for movies by
+              their titles and the results will show the genres and its percentages that the movie is categorized in.</h5>
+          </h5>
+          <form method="POST" action="/predict" role="form", name="movieform">
+            <div class="form-group">
+                <input type="text" class="form-control" name="MovieTitle" placeholder="Enter a movie title">
+            </div>
+            <input type="submit" value="submit" class="btn btn-default">
+        </form>
+        <p class="center-align light">{{ prediction }}</p>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+
+  <!--Section 3: About-->
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+    </div>
+    <div class="parallax"><img src="{{ url_for('static', filename='images/popcorn.jpg') }}" alt="popcorn"></div>
+  </div>
+  <!--About Content-->
+  <div class="container">
+    <div id="about" class="about-section scrollspy">
+      <div class="row">
+        <div class="col s12 center">
+          <h3>
+            <i class="mdi-content-send brown-text"></i>
+          </h3>
+          <h3 class="about-title">A B O U T</h3>
+          <h5 class="center-align light"><img src="https://media.giphy.com/media/Wj7lNjMNDxSmc/giphy-downsized.gif" width=87>Oh, hello!<br>
+          We're the X-cessive Ambassador.  This duo is comprised of Niki Patel and Alli Sklar.  Our shared love and interest for movies
+          is the driving force behind the Movie Genre Predictor.  When we're not coding, you can find us on the couch with a bowl of popcorn
+          watching our favorite movies (Alli's: What We Do in the Shadows | Niki's: Dodgeball- A True Underdog Story).
+          </h5>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!--Section 3: Contact-->
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+    </div>
+    <div class="parallax"><img src="{{ url_for('static', filename='images/slate_theater.jpg') }}" alt="movie theater"></div>
+  </div>
+  <!--Contact Section-->
+  <footer class="page-footer teal">
+    <div class="container">
+      <div id="contact" class="contact-section scrollspy">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="center-align white-text">C O N T A C T</h5>
+            <!-- <p class="grey-text text-lighten-4"></p> -->
+            <div class="input-field">
+              <input type="text" placeholder="Name" id="user-name">
+            </div>
+            <div class="input-field">
+              <input type="text" placeholder="Email" id="user-email">
+            </div>
+            <div class="input-field">
+              <input type="text" placeholder="Message" id="message">
+            </div>
+            <input type="submit" value="Submit" class="btn">
+        </div>
+
+        <div class="col l2 s12">
+        </div>
+
+
+        <div class="col l4 s12">
+          <h5 class="justified-align white-text">R E S O U R C E S</h5>
+          <ul>
+            <li><a class="white-text" href="https://github.com/aksklar/X-cessive-Ambassador" target="_blank">X-cessive Ambassador Repo</a></li>
+            <li><a class="white-text" href="https://grouplens.org/datasets/movielens/" target="_blank">MovieLens</a></li>
+            <li><a class="white-text" href="https://www.themoviedb.org/" target="_blank">The Movie DB</a></li>
+          </ul>
+        </div>
+        
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="center-align container">
+      Fueled by CORGIS!
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{{ url_for('static', filename='js/materialize.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/init.js') }}"></script>
+
+  </body>
+</html>
