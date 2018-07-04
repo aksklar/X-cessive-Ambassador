@@ -88,8 +88,9 @@
                 <input type="text" class="form-control" name="MovieTitle" placeholder="Enter a movie title">
             </div>
             <input type="submit" value="submit" class="btn btn-default">
-        </form>
-        <p class="center-align light">{{ prediction }}</p>
+        </form><br>
+        <h4 class="center-align"> {{ title }}</h4>
+        <h5 class="center-align light">{{ prediction }}</h5>
         </div>
       </div>
   
@@ -135,7 +136,7 @@
         <div class="row">
           <div class="col l6 s12">
             <h5 class="center-align white-text">C O N T A C T</h5>
-            <!-- <p class="grey-text text-lighten-4"></p> -->
+            <form action="MAILTO:alaindkt@gmail.com" method="post" enctype="text/plain">
             <div class="input-field">
               <input type="text" placeholder="Name" id="user-name">
             </div>
@@ -146,6 +147,7 @@
               <input type="text" placeholder="Message" id="message">
             </div>
             <input type="submit" value="Submit" class="btn">
+            </form>
         </div>
 
         <div class="col l2 s12">

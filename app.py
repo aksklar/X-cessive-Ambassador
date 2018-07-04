@@ -73,8 +73,8 @@ def predict_model():
         title=request.form["MovieTitle"]
         plot = session.query(Movies.Plot).filter(Movies.Title=='{}'.format(title)).all()
         prediction=svc.predict(count_vect.transform(['{}'.format(plot[0])]))
-        return render_template("index.html", prediction=prediction[0])
-       
+        return render_template("index.html", title=title, prediction=prediction[0])
+
 
 @app.route("/data")
 def data():
